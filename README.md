@@ -409,7 +409,49 @@ CRUD es un acrónimo que representa las operaciones básicas en sistemas de gest
 2. Read (Leer): Recuperar información existente.
 3. Update (Actualizar): Modificar registros existentes.
 4. Delete (Eliminar): Borrar registros.
+5. 
 ## ¿Cómo conecto código PHP a mi base de datos? Haz el servicio de conexión
+```php
+<?php
+// Datos de conexión a la base de datos
+$servidor = "tu_servidor";
+$usuario = "tu_usuario";
+$contrasena = "tu_contrasena";
+$base_datos = "tu_base_de_datos";
+
+// Crear conexión
+$conexion = new mysqli($servidor, $usuario, $contrasena, $base_datos);
+
+// Verificar la conexión
+if ($conexion->connect_error) {
+    die("Conexión fallida: " . $conexion->connect_error);
+}
+
+echo "Conexión exitosa";
+
+// Realizar operaciones con la base de datos aquí...
+
+// Cerrar conexión
+$conexion->close();
+?>
+```
+
+Claro, aquí tienes una explicación más concisa:
+
+1. **Conexión a la base de datos:**
+   Utiliza la clase `mysqli` para establecer una conexión con la base de datos, proporcionando detalles como el servidor, usuario, contraseña y nombre de la base de datos.
+
+2. **Verificación de errores de conexión:**
+   Se verifica si hay errores en la conexión. Si se encuentra algún problema, se muestra un mensaje de error y se detiene la ejecución.
+
+3. **Operaciones con la base de datos:**
+   Si la conexión es exitosa, puedes realizar operaciones como insertar, actualizar o consultar datos en la base de datos.
+
+4. **Cierre de la conexión:**
+   Al finalizar las operaciones, cierra la conexión para liberar recursos.
+
+5. **Recomendaciones adicionales:**
+   Se sugiere utilizar `mysqli` o `PDO` en lugar de la extensión obsoleta `mysql`. Además, se aconseja emplear consultas preparadas para evitar posibles ataques de inyección SQL.
 
 #PARTE 3
 
