@@ -32,7 +32,7 @@ function toUpperCase($text){
     echo strtoupper($text) . "<br>";
 }
 
-toUpperCase("Me gustaría poder aprender programación y conseguir trabajo de programadora");
+toUpperCase("Me gustaria poder aprender programacion y conseguir trabajo de programadora");
 
 //28. Crear una función que reciba un array de nombres y que convierta la primera letra de cada nombre en mayúscula.
 function convertirPrimeraMayúscula($nombres){
@@ -40,8 +40,34 @@ function convertirPrimeraMayúscula($nombres){
 }
 
 print_r(convertirPrimeraMayúscula(["marta", "elena", "juanra", "amaya"]));
+echo "<pre>";
 
 //29. Crear una clase coche con sus atributos y un atributo puede ser de tipo array
+class coche{
+    public $marca;
+    public $numPuertas;
+    public $caracteristicas =[];
 
+    public function __construct($marca, $numPuertas, $caracteristicas){
+        $this->marca= $marca;
+        $this->numPuertas= $numPuertas;
+        $this->caracteristicas= $caracteristicas;
+    }
+
+    public function obtenerInfo(){
+        return [
+            "marca"=> $this->marca,
+            "numPuertas"=> $this->numPuertas,
+            "caracteristicas"=> $this->caracteristicas
+        ];
+    }
+}
+
+$ford = new coche("Ford", 2, ["gris, 2009"]);
+print_r(($ford->obtenerInfo()));
+
+//30. Crear una función que devuelva la marca del carro.
+//31. Crear una función que devuelva la cantidad de puertas que tiene el carro.
+//32. Crear una función que devuelva un atributo del array.
 
 ?>
