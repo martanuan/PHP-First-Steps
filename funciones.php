@@ -18,6 +18,30 @@ function parImpar($numero){
 
 $numero= 15;
 $resultado= parImpar($numero);
-echo "El número es: $resultado";
+echo "El número es: $resultado<br>";
+
+//26. Crear un función que convierta en minúsculas todas las letras de un texto.
+function toLowerCase($text){
+    echo strtolower($text) . "<br>";
+}
+
+toLowerCase("APRENdiendo PROGRamaciON paRA PODer SER ProGRAMADORA");
+
+// 27. Crear una función que convierta en mayúsculas todas las letras de un texto.
+function toUpperCase($text){
+    echo strtoupper($text) . "<br>";
+}
+
+toUpperCase("Me gustaría poder aprender programación y conseguir trabajo de programadora");
+
+//28. Crear una función que reciba un array de nombres y que convierta la primera letra de cada nombre en mayúscula.
+function convertirPrimeraMayúscula($nombres){
+    return array_map('ucfirst', $nombres);
+}
+
+print_r(convertirPrimeraMayúscula(["marta", "elena", "juanra", "amaya"]));
+
+//29. Crear una clase coche con sus atributos y un atributo puede ser de tipo array
+
 
 ?>
