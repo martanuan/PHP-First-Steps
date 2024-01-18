@@ -43,6 +43,9 @@ print_r(convertirPrimeraMayúscula(["marta", "elena", "juanra", "amaya"]));
 echo "<pre>";
 
 //29. Crear una clase coche con sus atributos y un atributo puede ser de tipo array
+//30. Crear una función que devuelva la marca del carro.
+//31. Crear una función que devuelva la cantidad de puertas que tiene el carro.
+//32. Crear una función que devuelva un atributo del array.
 class coche{
     public $marca;
     public $numPuertas;
@@ -54,20 +57,24 @@ class coche{
         $this->caracteristicas= $caracteristicas;
     }
 
-    public function obtenerInfo(){
-        return [
-            "marca"=> $this->marca,
-            "numPuertas"=> $this->numPuertas,
-            "caracteristicas"=> $this->caracteristicas
-        ];
+    function obtenerMarca(){
+        return $this->marca;
+    }
+
+    function obtenerNumPuertas(){
+        return $this->numPuertas;
+    }
+
+    function obtenerElementoArray(){
+        return $this->caracteristicas;
     }
 }
 
-$ford = new coche("Ford", 2, ["gris, 2009"]);
-print_r(($ford->obtenerInfo()));
+$caracteristicas=["Aire acondicionado", "Asientos calefactables", "Pantalla Multimedia"];
+$ford = new coche("Ford", 2, $caracteristicas);
 
-//30. Crear una función que devuelva la marca del carro.
-//31. Crear una función que devuelva la cantidad de puertas que tiene el carro.
-//32. Crear una función que devuelva un atributo del array.
+echo "Marca del coche: " . $ford->obtenerMarca() . "<br>";
+echo "El coche tiene: " . $ford->obtenerNumPuertas() . "puertas <br>";
+echo "Tiene como características: " . implode(",",$ford->obtenerElementoArray());
 
 ?>
